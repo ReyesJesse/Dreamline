@@ -1,0 +1,620 @@
+@font-face {
+    font-family: logo;
+    src: url(/fonts/TrajanusBricks.ttf);
+}
+
+/* General styles */
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color:#3c2a21 ;
+}
+
+/* Navigation bar styles */
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #3C2A21;
+    color: white;
+    position: fixed; /* Make the navigation bar fixed */
+    top: 0; /* Position it at the top of the viewport */
+    left: 0; /* Position it at the left of the viewport */
+    width: 100%; /* Make it span the entire width of the viewport */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Add a light shadow to the text */
+}
+
+.logo {
+    font-size: 30px;
+    font-family: logo;
+}
+.hidden {
+    display: none;
+}
+.menu-toggle {
+    display: none; /* Hide initially on larger screens */
+}
+
+.hamburger {
+    width: 25px;
+    height: 18px; /* Adjust height to fit three lines */
+    position: relative;
+    right: 20px;
+}
+
+.menu-toggle .line{
+    width: 25px; /* Set the width of each line */
+    height: 3px; /* Set the height of each line */
+    background-color: white;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle .line:nth-child(2) {
+    top: 7px; /* Adjust position of second line */
+}
+
+.menu-toggle .line:nth-child(3) {
+    top: 13px; /* Adjust position of third line */
+}
+
+.menu-toggle.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+
+}
+
+.menu-toggle.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -4px);
+    
+
+}
+.menu-toggle.active .hamburger{
+   z-index: 2;
+    left: 5px;
+}
+
+/* Navigation list styles */
+.navList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 20px;
+    
+}
+
+.navList li:not(.logo) {
+    margin-left: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navList li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    font-weight: 100;
+}
+
+.navList li a:visited {
+    color: white;
+}
+.intro-section{
+    height: 70vh;
+}
+.intro-section {
+    height: 70vh;
+    position: relative;
+    top: 40px;
+    background-image: url(/cabinetPhotos/Cabinet.png);
+    background-size: cover;
+    background-position: center -15rem;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Add shadow with a slight blur */
+
+}
+
+.intro-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.intro-section h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Add a light shadow to the text */
+    position: relative;
+    top: -45px;
+    font-size: 40px;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+}
+.ourWorkContainer {
+    position: relative; /* Set the container as relative positioning */
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px; /* Add a gap between image sets */
+    text-align: center;
+}
+
+.ourWorkContainer h1 {
+
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Add a light shadow to the text */
+    left: 50%;
+    width: 100%;
+    position: absolute; /* Set the h1 as absolute positioning */
+    top: -70px; /* Adjust top position as needed */
+    transform: translateX(-50%); /* Center the h1 horizontally */
+    z-index: 1; /* Ensure the h1 appears on top of the image sets */
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+}
+
+.aboutUs {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a light shadow to the text */
+
+    position: absolute; /* Set the aboutUs section as absolute positioning */
+    top: 50px; /* Align the top of the section with the top of the container */
+    left: 20px; /* Position the section to the left of the container */
+    width: 480px; /* Set the width of the section */
+    padding: 20px; /* Add padding to the section */
+    background-color: rgba(128, 128, 128, 0.6); /* Set gray background color with some transparency */
+    color: #1b0f09; /* Set text color */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: 1px solid #201510;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Add shadow with a slight blur */
+
+}
+
+.aboutUs h2 {
+    margin-top: 0; /* Remove top margin of the h2 */
+    
+}
+
+.imageSet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    gap: 25px; /* Add a gap between image sets */
+}
+
+.imageSet img {
+    border: 1px solid #201510;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
+    filter: brightness(60%);
+    max-width: 100%;
+    height: auto;
+    width: 500px; 
+    z-index: -1;
+}
+.getQuoteContainer {
+    right: 5rem;
+    position: absolute;
+    top: 45rem;
+    width: 480px;
+    height: 150px;
+    padding: 20px; /* Add padding to the section */
+    background-color: rgba(128, 128, 128, 0.6); /* Set gray background color with some transparency */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: 1px solid #201510;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Add shadow with a slight blur */
+    font-weight: 400px;
+        color: #1b0f09; /* Set text color */
+
+}
+
+.getQuoteContainer button {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight: 700;
+    padding: 5px;
+    margin-top: 10px; /* Add margin to separate the button from the text */
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    border-bottom: 1px solid #160d09;
+cursor: pointer;
+color: #1b0f09; /* Set text color */
+
+}
+.getQuoteContainer button:hover{
+    color: #1b0f09; /* Set text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Add a light shadow to the text */
+
+
+}
+
+
+.getQuoteContainer p{
+    color: #1b0f09; /* Set text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
+}
+/* CSS for testimonials section */
+.reviewSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+
+  }
+  
+  .reviewsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    
+  }
+  .reviewSection h1{
+    width: 15%;
+    font-size: 40px;
+    border-bottom: 1px solid white;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+  }
+  
+  .reviewOne, .reviewTwo, .reviewThree {
+    color: white;
+    flex-basis: calc(33.33% - 20px); /* Each testimonial takes approximately one-third of the space */
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.418); /* Set gray background color with some transparency */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Add shadow for a card-like effect */
+  }
+  
+  .reviewOne p, .reviewTwo p, .reviewThree p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Add a light shadow to the text */
+
+  }
+  
+  .reviewOne h4, .reviewTwo h4, .reviewThree h4 {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .contactUsContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+
+}
+
+.contactUsContainer h1 {
+    text-align: center;
+    
+}
+
+.contactUsContainer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.contactUsContainer .column {
+    flex-basis: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+.contactUsContainer .column h2 {
+    margin-bottom: 10px;
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.contactUsContainer .column button {
+    padding: 10px 20px;
+    background-color: rgba(128, 128, 128, 0.418);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.contactUsContainer .column button:hover {
+    background-color: rgba(128, 128, 128, 0.418);
+}
+
+.contactUsContainer img {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.contactUsContainer .business-hours {
+    flex-basis: 30%;
+    text-align: left;
+    background-color: rgba(128, 128, 128, 0.418);
+    padding: 10px;
+    border-radius: 5px;
+}
+.footer {
+    padding: 20px 0; /* Add padding */
+    text-align: center;
+    box-sizing: border-box;
+    position: relative; /* Make the footer a positioned container */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-left,
+.footer-right {
+    flex-basis: 50%;
+}
+
+.footer-right {
+    text-align: right; /* Align the social media icons to the right */
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a i {
+    margin-right: 20px;
+    font-size: 24px;
+}
+
+/* Copyright notice styling */
+.copyright {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+}
+
+/* Increase the size of Font Awesome icons */
+.footer a i {
+    margin-right: 20px; /* Add right margin for gap between icons */
+    font-size: 24px; /* Adjust the font size as needed */
+}
+@media screen and (max-width: 768px) {
+    /* Styles for smaller screens */
+    .menu-toggle {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .navList {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+
+        position: absolute;
+        top: 125px;
+        transform: translateY(-50%);
+        left: 0;
+        background-color: #3C2A21;
+        width: calc(100% - 20px);
+        padding: 10px;
+        box-sizing: border-box;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+    
+    .navList.active {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+
+        opacity: 1;
+        pointer-events: auto;
+        transition-delay: 0s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navList:not(.active) {
+        transition-delay: -1s;
+    }
+
+    .navList li {
+        margin: 10px 0;
+    }
+    .intro-section {
+        background-size: fill; /* Change to 'contain' for smaller screens */
+        background-position: -21.5rem; /* Center the background image */
+        text-align: center;
+        
+    }
+    .intro-section h1 {
+      font-size: 30px;
+    }
+   
+    
+    .ourWorkContainer {
+        position: relative; /* Reset position to relative for responsive layout */
+        flex-direction: column; /* Stack image sets vertically on smaller screens */
+    }
+    .ourWorkContainer h1 {
+        left: 50%;
+        top: 265px;
+        border-bottom: 1px solid;
+        padding-bottom: 5px;
+        width: 70%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+
+    }
+    .aboutUs {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+
+        position: relative; /* Reset position to relative for responsive layout */
+        top: -15px; /* Reset top position */
+        left: 0; /* Reset left position */
+        width: auto; /* Reset width */
+        margin-top: 20px; /* Add margin-top to separate from the images */
+        padding: 10px; /* Reduce padding for smaller screens */
+        background-color: rgba(128, 128, 128, 0.2); /* Set gray background color with some transparency */
+        border: 1px solid #201510;
+        color: white;
+    }
+    .aboutUs h2{
+        border-bottom: 1px solid;
+
+        padding-bottom: 5px;
+    }
+
+    .imageSet img {
+        max-width: 100%; /* Set maximum width relative to parent container */
+        height: auto;
+        width: 330px; /* Adjust width to shrink the pictures */
+        margin-top: 20px; /* Add margin-top to separate from the "About Us" section */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Add shadow with a slight blur */
+
+    }
+    .getQuoteContainer {
+        background-color: rgba(128, 128, 128, 0.2); /* Set gray background color with some transparency */
+        border: 1px solid #201510;
+        color: white;
+        position: relative; /* Change position to relative for mobile responsiveness */
+        top: auto; /* Reset top position */
+        right: auto; /* Reset right position */
+        margin-top: 20px; /* Add margin-top to separate from the image sets */
+        width: auto; /* Reset width */
+        height: auto; /* Reset height */
+        padding: 20px; /* Add padding to the section */
+        color: white; /* Set text color */
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Add shadow with a slight blur */
+        font-weight: 400; /* Reset font weight */
+    }
+
+    .getQuoteContainer button {
+        color: white;
+        border-bottom: 1px solid white;
+        padding-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 5);
+
+    }
+    
+.getQuoteContainer button:hover {
+    color: white;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+
+}
+
+.getQuoteContainer p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+
+ color: white;
+}
+.reviewsContainer {
+    flex-direction: column; /* Stack testimonials on top of each other for mobile */
+}
+.reviewSection h1 {
+    padding-bottom: 10px;
+    width: 100%; /* Adjust width for mobile */
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 25px; /* Add some spacing below the heading */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    color: white;
+  }
+  .contactUsContainer .row {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+}
+.footer {
+    padding: 20px 0; /* Add padding */
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center; /* Center content horizontally */
+}
+
+.container {
+    max-width: 1200px; /* Set maximum width */
+    margin: 0 auto; /* Center the footer */
+    padding: 0 20px; /* Add padding */
+}
+
+.footer-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    flex-direction: column; /* Stack content vertically */
+}
+
+.footer-left,
+.footer-right {
+    flex-basis: 100%; /* Take full width on smaller screens */
+    margin-bottom: 20px; /* Add space between sections */
+}
+
+/* Example styling for footer links */
+.footer a {
+    color: #fff; /* Set link color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Increase the size of Font Awesome icons and add gap */
+.footer a i {
+    font-size: 30px; /* Adjust the font size as needed */
+    margin-right: 20px; /* Add right margin for gap between icons */
+}
+.copyright {
+    font-size: 11px;
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+}
+
+
+
+}
